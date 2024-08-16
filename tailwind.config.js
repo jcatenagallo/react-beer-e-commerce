@@ -19,6 +19,10 @@ module.exports = {
         desktopXl: `${BREAKPOINTS.DESKTOP_XL}px`,
       },
       colors: {
+        darks: {
+          black: '#232323',
+          font: '#323232',
+        },
         blues: {
           deepSea: '#04485E',
           morningMist: '#C5DEF3',
@@ -31,6 +35,7 @@ module.exports = {
           aquaHaze: '#ECF4F6',
         },
         creams: {
+          background: '#FAFAFA',
           alabaster: '#F0EEE6',
           plaster: '#F9F8F4',
         },
@@ -44,15 +49,18 @@ module.exports = {
           sage: '#9ABFB4',
         },
         grays: {
+          smooth: '#808080',
           light: '#EEEEEE',
           onyx: '#122526',
           shale: '#596667',
           mistic: '#D0D5DD',
           manatee: '#98A2B3',
+          label: '#646464',
         },
         warmTones: {
           paprika: '#E05449',
         },
+        orange: '#FF9F24',
       },
       maxWidth: {
         'screen-mobile': `${BREAKPOINTS.MOBILE}px`,
