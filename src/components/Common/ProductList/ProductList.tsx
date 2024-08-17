@@ -1,4 +1,5 @@
 import tw from 'twin.macro';
+import Link from 'next/link';
 
 import ProductCard from '../ProductCard';
 
@@ -11,7 +12,9 @@ gap-[13px]
 const ProductList = () => {
   return (
     <StyledWrapper>
-      <ProductCard />
+      <Link href="/1234">
+        <ProductCard />
+      </Link>
       <ProductCard />
       <ProductCard />
       <ProductCard />
