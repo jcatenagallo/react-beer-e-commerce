@@ -10,7 +10,7 @@ const inter = Inter({
 
 const StyledMain = styled.div`
   ${tw`
-    bg-white
+    bg-creams-background
   `}
 `;
 
@@ -20,7 +20,7 @@ const CustomStyles = createGlobalStyle({
       w-full
       antialiased
       font-sans
-      bg-white
+      bg-creams-background
     `,
   },
 });

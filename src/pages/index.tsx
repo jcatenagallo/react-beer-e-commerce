@@ -1,18 +1,23 @@
 import tw from 'twin.macro';
 
-import Layout from '@/components/Layout';
+import Header from '@/components/Common/Header';
+import WelcomeMessage from '@/components/Pages/Home/WelcomeMessage';
+import MainContent from '@/components/Pages/Home/MainContent';
 
 const StyledWrapper = tw.div`
 flex
 flex-col
 relative
 overflow-hidden
+px-6
 `;
 
 export default function Home() {
   return (
     <StyledWrapper>
-      <Layout>NEXT JS, TAILWIND, TWIN MACRO, STYLED COMPONENTS, HUSKY, ESLINT BASE PROJECT</Layout>
+      <Header />
+      <WelcomeMessage />
+      <MainContent />
     </StyledWrapper>
   );
 }
