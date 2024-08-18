@@ -2,8 +2,16 @@ import tw from 'twin.macro';
 import Image from 'next/image';
 import { PlusIcon } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
-import { Beer } from '@/assets/images';
+import { Product } from '@/types/products';
+import { PRODUCT_IMAGES } from '@/constants/images';
+import { ModeloEspecial } from '@/assets/images';
+
+const StyledClickableArea = tw.div`
+cursor-pointer
+relative
+`;
 
 const StyledWrapper = tw.div`
 bg-white
@@ -59,20 +67,38 @@ font-medium
 text-grays-smooth
 `;
 
-const ProductCard = () => {
+type Props = {
+  data: Product;
+};
+
+const ProductCard = ({ data }: Props) => {
+  const productImage = PRODUCT_IMAGES?.[data.id] || ModeloEspecial;
+  const handleAddToCart = () => window.alert(`${data.brand} added to cart!`);
+
   return (
-    <StyledWrapper>
-      <StyleTitle>Card</StyleTitle>
-      <Image alt={`product`} height={122} src={Beer} width={122} />
-      <StyledPrice>$28.65</StyledPrice>
-      <StyledAddButton>
+    <StyledClickableArea>
+      <Link href={`/${data.id}`}>
+        <StyledWrapper>
+          <StyleTitle>{data.brand}</StyleTitle>
+          <Image
+            alt={`product`}
+            height={122}
+            src={productImage}
+            style={{ maxWidth: '122px', maxHeight: '122px', objectFit: 'contain' }}
+            width={122}
+          />
+          <StyledPrice>$28.65</StyledPrice>
+          <StyledRating>
+            <StarIcon className="h-3 w-3 text-orange" />
+            <StyledRatingLabel>{data.abv.slice(0, -1)}</StyledRatingLabel>
+          </StyledRating>
+        </StyledWrapper>
+      </Link>
+
+      <StyledAddButton onClick={handleAddToCart}>
         <PlusIcon className="h-6 w-6 text-white" />
       </StyledAddButton>
-      <StyledRating>
-        <StarIcon className="h-3 w-3 text-orange" />
-        <StyledRatingLabel>4.9</StyledRatingLabel>
-      </StyledRating>
-    </StyledWrapper>
+    </StyledClickableArea>
   );
 };
 

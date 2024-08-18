@@ -14,8 +14,6 @@ px-6
 `;
 
 export default function Home() {
-  const { data } = useGetProducts();
-
   return (
     <StyledWrapper>
       <Header />
