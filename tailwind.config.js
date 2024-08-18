@@ -22,6 +22,7 @@ module.exports = {
         darks: {
           black: '#232323',
           font: '#323232',
+          secondaryFont: '#0F0D23',
         },
         blues: {
           deepSea: '#04485E',
@@ -56,6 +57,7 @@ module.exports = {
           mistic: '#D0D5DD',
           manatee: '#98A2B3',
           label: '#646464',
+          font: '#969696',
         },
         warmTones: {
           paprika: '#E05449',

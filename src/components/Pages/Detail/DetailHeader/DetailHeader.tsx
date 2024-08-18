@@ -1,6 +1,7 @@
 import tw from 'twin.macro';
 import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 const StyledWrapper = tw.header`
 flex
@@ -9,6 +10,8 @@ pb-6
 justify-between
 bg-transparent
 items-center
+w-full
+px-6
 `;
 
 const StyledButtonIcon = tw.button`
@@ -27,9 +30,11 @@ font-bold
 const DetailHeader = () => {
   return (
     <StyledWrapper>
-      <StyledButtonIcon>
-        <ArrowLeftIcon className="h-6 w-6 text-darks-font" />
-      </StyledButtonIcon>
+      <Link href="/">
+        <StyledButtonIcon>
+          <ArrowLeftIcon className="h-6 w-6 text-darks-font" />
+        </StyledButtonIcon>
+      </Link>
       <StyledTitle>Detail</StyledTitle>
       <StyledButtonIcon>
         <EllipsisHorizontalIcon className="h-6 w-6 text-darks-font" />
