@@ -3,6 +3,7 @@ import tw from 'twin.macro';
 import Header from '@/components/Common/Header';
 import WelcomeMessage from '@/components/Pages/Home/WelcomeMessage';
 import MainContent from '@/components/Pages/Home/MainContent';
+import useGetProducts from '@/hooks/api/useGetProducts';
 
 const StyledWrapper = tw.div`
 flex
@@ -13,6 +14,8 @@ px-6
 `;
 
 export default function Home() {
+  const { data } = useGetProducts();
+
   return (
     <StyledWrapper>
       <Header />
