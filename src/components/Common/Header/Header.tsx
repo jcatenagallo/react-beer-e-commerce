@@ -10,7 +10,6 @@ pt-10
 pb-6
 justify-between
 bg-transparent
-
 `;
 
 const StyledButtonIcon = tw.button`
