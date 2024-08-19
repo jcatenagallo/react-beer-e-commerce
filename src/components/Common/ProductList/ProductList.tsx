@@ -1,5 +1,6 @@
 import tw from 'twin.macro';
-import Link from 'next/link';
+
+import useGetProducts from '@/hooks/api/useGetProducts';
 
 import ProductCard from '../ProductCard';
 
@@ -10,15 +11,11 @@ gap-[13px]
 `;
 
 const ProductList = () => {
+  const { data } = useGetProducts();
+
   return (
     <StyledWrapper>
-      <Link href="/1234">
-        <ProductCard />
-      </Link>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      {data?.map((product) => <ProductCard key={product.id} data={product} />)}
     </StyledWrapper>
   );
 };

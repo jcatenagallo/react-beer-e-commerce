@@ -1,4 +1,8 @@
 import tw from 'twin.macro';
+import { useMemo, useState } from 'react';
+
+import useGetStockPriceById from '@/hooks/api/useGetPriceStockById';
+import { Product } from '@/types/products';
 
 import SizeSelector from './SizeSelector';
 import DetailFooter from './DetailFooter';
@@ -15,6 +19,7 @@ rounded-t-[48px]
 pt-[45px]
 px-6
 mt-auto
+overflow-y-auto
 `;
 
 const StyledTitle = tw.h2`
@@ -40,16 +45,36 @@ mb-[29px]
 text-grays-font
 `;
 
-const DetailCard = () => {
+type Props = {
+  productData: Product;
+};
+
+const DetailCard = ({ productData }: Props) => {
+  const parsedSkuCode = parseFloat(productData.skus[0].code);
+
+  const [selectedSize, setSelectedSize] = useState<number>(parsedSkuCode);
+
+  const { data: stockPriceData } = useGetStockPriceById(selectedSize);
+
+  const price = useMemo(() => {
+    const priceNumber = (stockPriceData?.price || 0) / 100;
+
+    return `$${priceNumber.toFixed(2)}`;
+  }, [stockPriceData]);
+
   return (
     <StyledWrapper>
       <StyledHeader>
-        <StyledTitle>Modelo</StyledTitle>
-        <StyledPrice>$26.40</StyledPrice>
+        <StyledTitle>{productData.brand}</StyledTitle>
+        <StyledPrice>{price}</StyledPrice>
       </StyledHeader>
-      <StyledSubTitle>Origin: Import I</StyledSubTitle>
-      <DetailDescription />
-      <SizeSelector />
+      <StyledSubTitle>{`Origin: ${productData.origin}`}</StyledSubTitle>
+      <DetailDescription description={productData.information} />
+      <SizeSelector
+        selectedSize={selectedSize}
+        setSelectedSize={setSelectedSize}
+        sizesData={productData.skus}
+      />
       <DetailFooter />
     </StyledWrapper>
   );

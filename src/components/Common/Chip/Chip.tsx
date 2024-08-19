@@ -20,6 +20,8 @@ const StyledChipLabel = styled.label<{ isSelected?: boolean }>`
 text-sm
 leading-[18px]
 text-grays-font
+truncate
+max-w-[123px]
 `}
 
   ${({ isSelected }) => isSelected && tw`text-orange`}
