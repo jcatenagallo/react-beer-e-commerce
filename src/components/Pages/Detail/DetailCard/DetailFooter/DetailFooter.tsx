@@ -2,6 +2,7 @@ import Image from 'next/image';
 import tw from 'twin.macro';
 
 import { IconBag } from '@/assets/icons';
+import { showWindowAlert } from '@/utils/showWindowAlert';
 
 const StyledDetailFooter = tw.footer`
 flex
@@ -33,10 +34,12 @@ w-full
 const DetailFooter = () => {
   return (
     <StyledDetailFooter>
-      <StyledGoToCartButton>
+      <StyledGoToCartButton onClick={() => showWindowAlert('Open cart page')}>
         <Image alt="icon-bag" height={24} src={IconBag} width={24} />
       </StyledGoToCartButton>
-      <SytledAddToCartButton>Add to cart</SytledAddToCartButton>
+      <SytledAddToCartButton onClick={() => showWindowAlert('Product added to cart!')}>
+        Add to cart
+      </SytledAddToCartButton>
     </StyledDetailFooter>
   );
 };

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Bars3CenterLeftIcon } from '@heroicons/react/24/outline';
 
 import { Avatar } from '@/assets/images';
+import { showWindowAlert } from '@/utils/showWindowAlert';
 
 const StyledWrapper = tw.header`
 flex
@@ -22,10 +23,10 @@ p-2
 const Header = () => {
   return (
     <StyledWrapper>
-      <StyledButtonIcon>
+      <StyledButtonIcon onClick={() => showWindowAlert('Open menu')}>
         <Bars3CenterLeftIcon className="h-6 w-6 text-darks-black" />
       </StyledButtonIcon>
-      <button>
+      <button onClick={() => showWindowAlert('Open user profile page')}>
         <Image
           alt={`avatar`}
           height={40}
