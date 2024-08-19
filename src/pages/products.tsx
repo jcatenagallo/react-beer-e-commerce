@@ -12,7 +12,7 @@ overflow-hidden
 px-6
 `;
 
-export default function Home() {
+export default function Products() {
   return (
     <StyledWrapper>
       <Header />
