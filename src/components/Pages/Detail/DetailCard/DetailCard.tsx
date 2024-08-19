@@ -54,7 +54,7 @@ const DetailCard = ({ productData }: Props) => {
 
   const [selectedSize, setSelectedSize] = useState<number>(parsedSkuCode);
 
-  const { data: stockPriceData } = useGetStockPriceById(selectedSize);
+  const { data: stockPriceData } = useGetStockPriceById(selectedSize, { refetchInterval: 5000 });
 
   const price = useMemo(() => {
     const priceNumber = (stockPriceData?.price || 0) / 100;
