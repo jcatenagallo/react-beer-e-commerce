@@ -3,6 +3,8 @@ import { ArrowLeftIcon } from '@heroicons/react/24/solid';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 
+import { showWindowAlert } from '@/utils/showWindowAlert';
+
 const StyledWrapper = tw.header`
 flex
 pt-10
@@ -36,7 +38,7 @@ const DetailHeader = () => {
         </StyledButtonIcon>
       </Link>
       <StyledTitle>Detail</StyledTitle>
-      <StyledButtonIcon>
+      <StyledButtonIcon onClick={() => showWindowAlert('Open detail menu')}>
         <EllipsisHorizontalIcon className="h-6 w-6 text-darks-font" />
       </StyledButtonIcon>
     </StyledWrapper>
