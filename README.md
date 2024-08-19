@@ -75,7 +75,6 @@ Once the application is running locally, you can use it to manage patient data. 
 
 ## Possible Improvements
 
-- Skeletons: I would like to add skeletons for the time the request are in 'inLoading' state for a better UX.
 - Animations: I would like to incorporate more animations into this application to give a more dynamic and cool look to the application.
 - Responvsive: I would like to make the app responsive for all screens.
 - Filters: Implementing a filter system would be straightforward with this TypeScript structure, and it would be useful for searching through patient data.
