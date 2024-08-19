@@ -8,6 +8,10 @@ flex
 mt-[auto]
 pb-[35px]
 gap-6
+sticky
+bottom-0
+bg-white
+p-2
 `;
 
 const StyledGoToCartButton = tw.button`

@@ -1,5 +1,5 @@
 import tw from 'twin.macro';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
 
 import Chip from '@/components/Common/Chip';
 
@@ -18,45 +18,32 @@ font-bold
 const StyledChipsWrapper = tw.div`
 flex
 gap-4
+flex-wrap
 `;
 
-const sizesData = [
-  {
-    id: '1',
-    label: 'S',
-  },
-  {
-    id: '2',
-    label: 'M',
-  },
-  {
-    id: '3',
-    label: 'L',
-  },
-  {
-    id: '4',
-    label: 'XL',
-  },
-  {
-    id: '5',
-    label: 'XXL',
-  },
-];
-const SizeSelector = () => {
-  const [selectedSize, setSelectedSize] = useState<string>('1');
+type Props = {
+  sizesData: { name: string; code: string }[];
+  selectedSize: number;
+  setSelectedSize: Dispatch<SetStateAction<number>>;
+};
 
+const SizeSelector = ({ sizesData, selectedSize, setSelectedSize }: Props) => {
   return (
     <StyledWrapper>
       <StyledTitle>Size</StyledTitle>
       <StyledChipsWrapper>
-        {sizesData.map((size) => (
-          <Chip
-            key={size.id}
-            isSelected={size.id === selectedSize}
-            label={size.label}
-            onClick={() => setSelectedSize(size.id)}
-          />
-        ))}
+        {sizesData.map(({ name, code }) => {
+          const parsedCode = parseFloat(code);
+
+          return (
+            <Chip
+              key={code}
+              isSelected={parsedCode === selectedSize}
+              label={name}
+              onClick={() => setSelectedSize(parsedCode)}
+            />
+          );
+        })}
       </StyledChipsWrapper>
     </StyledWrapper>
   );

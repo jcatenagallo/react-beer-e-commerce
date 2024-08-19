@@ -3,10 +3,12 @@ import Image from 'next/image';
 import { PlusIcon } from '@heroicons/react/24/outline';
 import { StarIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import { useMemo } from 'react';
 
 import { Product } from '@/types/products';
 import { PRODUCT_IMAGES } from '@/constants/images';
 import { ModeloEspecial } from '@/assets/images';
+import { PRICES_BY_ID } from '@/constants/prices';
 
 const StyledClickableArea = tw.div`
 cursor-pointer
@@ -73,6 +75,7 @@ type Props = {
 
 const ProductCard = ({ data }: Props) => {
   const productImage = PRODUCT_IMAGES?.[data.id] || ModeloEspecial;
+  const productPrice = useMemo(() => `$${PRICES_BY_ID?.[data.id] || 0}`, [data.id]);
   const handleAddToCart = () => window.alert(`${data.brand} added to cart!`);
 
   return (
@@ -87,7 +90,7 @@ const ProductCard = ({ data }: Props) => {
             style={{ maxWidth: '122px', maxHeight: '122px', objectFit: 'contain' }}
             width={122}
           />
-          <StyledPrice>$28.65</StyledPrice>
+          <StyledPrice>{productPrice}</StyledPrice>
           <StyledRating>
             <StarIcon className="h-3 w-3 text-orange" />
             <StyledRatingLabel>{data.abv.slice(0, -1)}</StyledRatingLabel>

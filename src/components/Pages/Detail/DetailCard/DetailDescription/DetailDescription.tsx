@@ -25,15 +25,16 @@ text-orange
 font-bold
 `;
 
-const DetailDescription = () => {
-  const [isTruncated, setIsTruncated] = useState<boolean>(true);
-  const completeDescription =
-    'Selling imported beer in the US with nearly 60 million cases in annual sales, growing more than 15 million cases over the past 2 years. A full flavored Mexican lager consistently delivering ';
+type Props = {
+  description: string;
+};
 
-  const trucatedDescription = useMemo(
-    () => `${completeDescription.substring(0, 170)} ... `,
-    [completeDescription],
-  );
+const DetailDescription = ({ description }: Props) => {
+  const [isTruncated, setIsTruncated] = useState<boolean>(true);
+
+  const trucatedDescription = useMemo(() => `${description.substring(0, 170)} ... `, [description]);
+
+  const completeDescription = useMemo(() => `${description} `, [description]);
 
   return (
     <StyledDescriptionWrapper>

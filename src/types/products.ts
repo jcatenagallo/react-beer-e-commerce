@@ -14,3 +14,8 @@ export type Product = {
   information: string;
   skus: Skus[];
 };
+
+export type StockPrice = {
+  price: number;
+  stock: number;
+};
