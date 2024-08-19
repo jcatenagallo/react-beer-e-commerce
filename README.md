@@ -20,7 +20,7 @@ This is mobile web app that consist in two pages:
 
 /products: A PLP (Product Listing Page) displaying a list of products.
 
-/product/[productId]-[brand]: A PDP (Product Details Page) displaying detailed information for each product, and allowing the user to see price and inventory (i.e., number of items in stock) for different size-variants of each product.
+/product/[productId]-[brand]: A PDP (Product Details Page) displaying detailed information for each product, and allowing the user to see price and inventory (i.e., number of items in stock) for different size-variants of each product. This page is checking for updated stock and price information every 5 seconds
 
 We are consimunig two endpoint to get this thata. One for the list of products an other for a stock price specific for a prouct and size selected. I you want to know more about the backend application you can explore the repository here: https://github.com/jcatenagallo/react-beer-e-commerce-backend
 
