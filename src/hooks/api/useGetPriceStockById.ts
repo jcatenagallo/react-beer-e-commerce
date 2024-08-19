@@ -16,7 +16,12 @@ export const getStockPriceById = async (id: number) => {
 
 const useGetStockPriceById = <T = StockPrice | undefined>(
   id: number,
-  opts?: UseQueryOptions<T, [typeof GET_STOCK_PRICE_BY_ID, typeof id]>
+  opts?: UseQueryOptions<
+    StockPrice | Record<string, never>,
+    unknown,
+    T,
+    [typeof GET_STOCK_PRICE_BY_ID, typeof id]
+  >,
 ) => {
   return useQuery([GET_STOCK_PRICE_BY_ID, id], () => getStockPriceById(id), opts);
 };

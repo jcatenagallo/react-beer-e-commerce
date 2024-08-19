@@ -15,7 +15,7 @@ export const getProducts = async () => {
 };
 
 const useGetProducts = <T = Product[],>(
-  opts?: UseQueryOptions<Product[], unknown, T, [typeof GET_PRODUCTS]>
+  opts?: UseQueryOptions<Product[], unknown, T, [typeof GET_PRODUCTS]>,
 ) => useQuery([GET_PRODUCTS], getProducts, opts);
 
 export default useGetProducts;

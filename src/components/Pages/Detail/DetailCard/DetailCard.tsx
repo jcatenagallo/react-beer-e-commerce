@@ -1,7 +1,6 @@
 import tw from 'twin.macro';
 import { useMemo, useState } from 'react';
 
-import useGetProducts from '@/hooks/api/useGetProducts';
 import useGetStockPriceById from '@/hooks/api/useGetPriceStockById';
 import { Product } from '@/types/products';
 

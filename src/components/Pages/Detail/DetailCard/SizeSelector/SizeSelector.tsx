@@ -1,5 +1,5 @@
 import tw from 'twin.macro';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 
 import Chip from '@/components/Common/Chip';
 

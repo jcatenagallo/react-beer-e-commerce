@@ -3,7 +3,6 @@ import tw from 'twin.macro';
 import Image from 'next/image';
 
 import DetailHeader from '@/components/Pages/Detail/DetailHeader';
-import { Beer } from '@/assets/images';
 import DetailCard from '@/components/Pages/Detail/DetailCard';
 import { PRODUCT_DETAIL_IMAGES } from '@/constants/images';
 import { ModeloEspecialDetail } from '@/assets/images/detail';
