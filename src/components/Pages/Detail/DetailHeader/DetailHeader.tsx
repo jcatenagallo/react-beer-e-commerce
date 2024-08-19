@@ -30,7 +30,7 @@ font-bold
 const DetailHeader = () => {
   return (
     <StyledWrapper>
-      <Link href="/">
+      <Link href="/products">
         <StyledButtonIcon>
           <ArrowLeftIcon className="h-6 w-6 text-darks-font" />
         </StyledButtonIcon>

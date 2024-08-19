@@ -80,7 +80,7 @@ const ProductCard = ({ data }: Props) => {
 
   return (
     <StyledClickableArea>
-      <Link href={`/${data.id}`}>
+      <Link href={`product/${data.id}-${data.brand.replace(/\s/g, '-')}`}>
         <StyledWrapper>
           <StyleTitle>{data.brand}</StyleTitle>
           <Image
