@@ -1,4 +1,4 @@
-export const mockApi = 'http://localhost:3000/api';
+export const mockApi = 'https://react-beer-e-commerce-backend.vercel.app/api';
 
 const endpoints = {
   /* Products */
