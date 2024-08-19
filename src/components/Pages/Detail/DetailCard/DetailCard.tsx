@@ -1,6 +1,5 @@
 import tw from 'twin.macro';
 import Skeleton from 'react-loading-skeleton';
-
 import 'react-loading-skeleton/dist/skeleton.css';
 import { useMemo, useState } from 'react';
 
