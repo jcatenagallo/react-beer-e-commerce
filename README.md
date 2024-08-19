@@ -2,7 +2,7 @@
 
 Welcome to the React Beer E-Commerce application repository. Before you start reading know that thiis is a only mobile web application and please note that you can see the Vercel deploy of this app here:
 
-https://react-beer-e-commerce-jibaoaeiw-juan-catenas-projects.vercel.app/products
+https://react-beer-e-commerce.vercel.app/products
 
 ## Table of Contents
 
